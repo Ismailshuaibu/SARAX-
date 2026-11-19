@@ -1,2 +1,0 @@
-# SARAX-
-sarax-website
