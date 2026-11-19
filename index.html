@@ -1,0 +1,598 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SARAX is a growing parent brand exploring technology, agriculture, trading and opportunities.">
+  <title>SARAX | Building Ideas. Creating Opportunities.</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --gold: #d4af37;
+      --navy: #071426;
+      --card: #10243c;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.7;
+    }
+
+    header {
+      background: #091a30;
+      border-bottom: 1px solid rgba(212,175,55,.35);
+      padding: 15px 6%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .logo {
+      width: 42px;
+      height: 42px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 29px;
+      font-style: italic;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      white-space: nowrap;
+      max-width: 100%;
+      padding: 5px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      min-height: 430px;
+      padding: 100px 7%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      background:
+        linear-gradient(rgba(7,20,38,.88), rgba(7,20,38,.94)),
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80");
+      background-position: center;
+      background-size: cover;
+    }
+
+    .hero h1 {
+      color: var(--gold);
+      font-size: clamp(36px, 6vw, 58px);
+      margin-bottom: 15px;
+    }
+
+    .hero h2 {
+      font-size: clamp(20px, 3vw, 29px);
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      color: #d7dfeb;
+    }
+
+    .gold-button {
+      display: inline-block;
+      background: var(--gold);
+      color: #071426;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 75px 7%;
+    }
+
+    .section-title {
+      color: var(--gold);
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      max-width: 750px;
+      margin: 0 auto 35px;
+      text-align: center;
+      color: #cbd5e1;
+    }
+
+    .about-content {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      color: #d7dfeb;
+    }
+
+    .business-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 35px;
+    }
+
+    .business-card {
+      background: var(--card);
+      border: 1px solid rgba(212,175,55,.3);
+      border-radius: 10px;
+      overflow: hidden;
+      text-decoration: none;
+      color: white;
+      transition: .3s;
+    }
+
+    .business-card:hover {
+      transform: translateY(-7px);
+      border-color: var(--gold);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      padding: 22px;
+    }
+
+    .card-content h3 {
+      color: var(--gold);
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .card-content p {
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    .learn-more {
+      display: inline-block;
+      color: var(--gold);
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .vision-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .vision-card {
+      background: var(--card);
+      padding: 28px;
+      border-left: 3px solid var(--gold);
+      border-radius: 7px;
+    }
+
+    .vision-card h3 {
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .social-section {
+      background: #091a30;
+      text-align: center;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      max-width: 850px;
+      margin: 35px auto;
+    }
+
+    .social-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--card);
+      border: 1px solid rgba(212,175,55,.3);
+      border-radius: 10px;
+      padding: 24px 12px;
+      min-height: 145px;
+      color: white;
+      text-decoration: none;
+      transition: .3s ease;
+    }
+
+    .social-card:hover {
+      border-color: var(--gold);
+      background: #172e49;
+      transform: translateY(-6px);
+      box-shadow: 0 8px 22px rgba(0,0,0,.2);
+    }
+
+    .social-icon {
+      width: 38px;
+      height: 38px;
+      color: var(--gold);
+      display: block;
+    }
+
+    .social-card strong {
+      display: block;
+      color: var(--gold);
+      font-size: 17px;
+    }
+
+    .social-card span {
+      font-size: 13px;
+      color: #cbd5e1;
+    }
+
+    .contact-email {
+      margin-top: 25px;
+      color: #cbd5e1;
+    }
+
+    .contact-email a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 6%;
+      background: #050f1d;
+      color: #aeb9c8;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: var(--gold);
+    }
+
+    .footer-links {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--gold);
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    @media (max-width: 800px) {
+      .business-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 12px 5%;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      nav {
+        width: 100%;
+        gap: 18px;
+      }
+
+      .hero {
+        min-height: 390px;
+        padding: 75px 6%;
+      }
+
+      section {
+        padding: 60px 6%;
+      }
+
+      .business-grid,
+      .vision-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .social-card {
+        min-height: 135px;
+        padding: 18px 8px;
+      }
+
+      .card-image {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="navbar">
+      <div class="brand">
+        <div class="logo">S</div>
+        SARAX
+      </div>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#businesses">Businesses</a>
+        <a href="#vision">Vision</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="home">
+      <h1>Welcome to SARAX</h1>
+      <h2>Building Ideas. Creating Opportunities.</h2>
+      <p>
+        We build ideas, explore technology and develop opportunities
+        for a better and more sustainable future.
+      </p>
+      <div>
+        <a href="#businesses" class="gold-button">
+          Explore Our Businesses
+        </a>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About SARAX</h2>
+      <div class="about-content">
+        <p>
+          SARAX is a growing parent brand established with a vision
+          to build ideas, create opportunities and develop ventures
+          across different industries.
+        </p>
+        <p>
+          Through innovation, creativity and commitment, SARAX aims
+          to explore possibilities and contribute to a better future.
+        </p>
+      </div>
+    </section>
+
+    <section id="businesses">
+      <h2 class="section-title">Our Business Divisions</h2>
+      <p class="section-intro">
+        SARAX is developing its vision across three key areas.
+        Explore the divisions and what each one aims to achieve.
+      </p>
+
+      <div class="business-grid">
+
+        <a href="technologies.html" class="business-card">
+          <img class="card-image"
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80"
+            alt="Technology circuit board" loading="lazy">
+          <div class="card-content">
+            <h3>SARAX Technologies</h3>
+            <p>
+              Exploring software development, digital solutions,
+              cybersecurity and technological innovation.
+            </p>
+            <span class="learn-more">Explore Technologies →</span>
+          </div>
+        </a>
+
+        <a href="agriculture.html" class="business-card">
+          <img class="card-image"
+            src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80"
+            alt="Green agricultural farmland" loading="lazy">
+          <div class="card-content">
+            <h3>SARAX Agriculture</h3>
+            <p>
+              Exploring crop production, agribusiness, livestock
+              farming and sustainable agricultural opportunities.
+            </p>
+            <span class="learn-more">Explore Agriculture →</span>
+          </div>
+        </a>
+
+        <a href="trading.html" class="business-card">
+          <img class="card-image"
+            src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=900&q=80"
+            alt="Shipping containers and trade logistics" loading="lazy">
+          <div class="card-content">
+            <h3>SARAX Trading</h3>
+            <p>
+              Exploring general trading, retail business,
+              wholesale opportunities and business development.
+            </p>
+            <span class="learn-more">Explore Trading →</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <section id="vision">
+      <h2 class="section-title">Our Vision & Mission</h2>
+      <div class="vision-grid">
+
+        <div class="vision-card">
+          <h3>Our Vision</h3>
+          <p>
+            To grow into a trusted and innovative parent brand
+            that creates meaningful opportunities and contributes
+            to sustainable development.
+          </p>
+        </div>
+
+        <div class="vision-card">
+          <h3>Our Mission</h3>
+          <p>
+            To develop practical ideas, explore new opportunities
+            and build ventures through innovation, dedication
+            and responsible business practices.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="social-section" id="contact">
+      <h2 class="section-title">Connect With SARAX</h2>
+      <p class="section-intro">
+        Follow our journey, discover ideas and stay connected
+        with the SARAX community.
+      </p>
+
+      <div class="social-grid">
+
+        <!-- Facebook -->
+        <a class="social-card"
+          href="https://www.facebook.com/share/1F5wUdT9J7/"
+          target="_blank" rel="noopener noreferrer">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-label="Facebook">
+            <path d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v2.1H7v3.2h2.8V21z"/>
+          </svg>
+          <strong>Facebook</strong>
+          <span>SM Foundation</span>
+        </a>
+
+        <!-- LinkedIn -->
+        <a class="social-card"
+          href="https://www.linkedin.com/in/𓆩💦𝐈𝐒𝐌𝐀-𝐄𝐄𝐋-𝐒𝐌💦𓆪-6b7449411?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+          target="_blank" rel="noopener noreferrer">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-label="LinkedIn">
+            <path d="M5.2 3a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4ZM3.3 9h3.8v12H3.3zm6.1 0H13v1.6h.1c.5-.9 1.7-1.9 3.5-1.9 3.7 0 4.4 2.4 4.4 5.5V21h-3.8v-6c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9.4z"/>
+          </svg>
+          <strong>LinkedIn</strong>
+          <span>Professional Network</span>
+        </a>
+
+        <!-- Instagram -->
+        <a class="social-card"
+          href="https://www.instagram.com/ismaeel_sm_?lqvp=MXkxeDlybGxxNDdoNw=="
+          target="_blank" rel="noopener noreferrer">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-label="Instagram">
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+          <strong>Instagram</strong>
+          <span>Follow Our Updates</span>
+        </a>
+
+        <!-- TikTok -->
+        <a class="social-card"
+          href="https://www.tiktok.com/@sm_foundation1?_r=1&_t=ZS-9BWwh0yPUG5"
+          target="_blank" rel="noopener noreferrer">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-label="TikTok">
+            <path d="M19.6 7.2c-1.5-.1-2.8-.9-3.6-2.1-.4-.6-.6-1.3-.7-2.1h-3.5v13.2c-.1 1.5-1.4 2.6-2.9 2.5-1.5-.1-2.6-1.4-2.5-2.9.1-1.4 1.2-2.5 2.6-2.5.3 0 .6 0 .9.1V9.9c-.3 0-.6-.1-.9-.1-3.4 0-6.1 2.7-6.1 6.1S5.6 22 9 22s6.1-2.7 6.1-6.1V9.2c1.3 1 2.9 1.5 4.5 1.5z"/>
+          </svg>
+          <strong>TikTok</strong>
+          <span>Watch Our Content</span>
+        </a>
+
+        <!-- YouTube -->
+        <a class="social-card"
+          href="https://youtube.com/@ismaeel_sm?si=weodZs-OC8km7OXI"
+          target="_blank" rel="noopener noreferrer">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-label="YouTube">
+            <path d="M23 7.1a3 3 0 0 0-2.1-2.1C19 4.5 12 4.5 12 4.5s-7 0-8.9.5A3 3 0 0 0 1 7.1C.5 9 .5 12 .5 12s0 3 .5 4.9a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.9.5-4.9s0-3-.5-4.9ZM9.5 15.5v-7l6 3.5z"/>
+          </svg>
+          <strong>YouTube</strong>
+          <span>Watch Our Videos</span>
+        </a>
+
+        <!-- WhatsApp -->
+        <a class="social-card"
+          href="https://whatsapp.com/channel/0029Vb8VOczEgGfOg8Eq991l"
+          target="_blank" rel="noopener noreferrer">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-label="WhatsApp">
+            <path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.3-4.7A8.5 8.5 0 1 1 20.5 11.8Z"/>
+            <path d="M8.5 8.2c.2-.5.5-.5.8-.5h.4c.2 0 .4.1.5.4l.8 1.8c.1.2.1.4 0 .6l-.6.7c-.2.2-.2.4-.1.6.5 1 1.4 1.8 2.4 2.3.2.1.4.1.6-.1l.8-.9c.2-.2.4-.2.6-.1l1.7.8c.3.1.4.3.4.5 0 .3-.2 1.2-.8 1.6-.6.5-1.4.7-2.2.5-1-.2-2.2-.7-3.7-2-1.2-1-2-2.3-2.2-3.3-.3-1 .1-2 .6-2.9Z"/>
+          </svg>
+          <strong>WhatsApp</strong>
+          <span>Join Our Channel</span>
+        </a>
+
+      </div>
+
+      <div class="contact-email">
+        Business enquiries:
+        <a href="mailto:ismailshuaibu4444@gmail.com">
+          ismailshuaibu4444@gmail.com
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="technologies.html">Technologies</a>
+      <a href="agriculture.html">Agriculture</a>
+      <a href="trading.html">Trading</a>
+    </div>
+
+    <p>© 2026 <strong>SARAX</strong>. All Rights Reserved.</p>
+    <p>Building Ideas. Creating Opportunities.</p>
+  </footer>
+
+</body>
+</html>

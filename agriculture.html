@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SARAX Agriculture</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #071426;
+    color: white;
+    line-height: 1.7;
+}
+
+header {
+    padding: 20px 7%;
+    border-bottom: 1px solid #b8913e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 43px;
+    height: 43px;
+    border: 2px solid #d4af37;
+    border-radius: 50%;
+    color: #d4af37;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.brand h2 {
+    color: #d4af37;
+    letter-spacing: 3px;
+}
+
+nav {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+.hero {
+    text-align: center;
+    padding: 90px 8%;
+}
+
+.hero h1 {
+    color: #d4af37;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+    color: #ddd;
+}
+
+.section {
+    padding: 65px 8%;
+    text-align: center;
+}
+
+.section h2 {
+    color: #d4af37;
+    margin-bottom: 20px;
+    font-size: 29px;
+}
+
+.section p {
+    max-width: 750px;
+    margin: auto;
+    color: #ddd;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.card {
+    background: #10233c;
+    border: 1px solid #b8913e;
+    border-radius: 10px;
+    padding: 28px 20px;
+}
+
+.card h3 {
+    color: #d4af37;
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 14px;
+}
+
+.opportunities {
+    background: #0c1b30;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background: #d4af37;
+    color: #071426;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #b8913e;
+    color: #bbb;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="brand">
+        <div class="logo">S</div>
+        <h2>SARAX</h2>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#focus">Focus Areas</a>
+        <a href="#opportunities">Vision</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>SARAX Agriculture</h1>
+    <p>
+        Growing Opportunities. Building Sustainable Futures.
+        Exploring ideas and opportunities across agriculture
+        and agribusiness.
+    </p>
+</section>
+
+<section class="section" id="about">
+    <h2>About SARAX Agriculture</h2>
+
+    <p>
+        SARAX Agriculture is a developing division of SARAX
+        with an interest in agricultural development,
+        farming and agribusiness.
+    </p>
+
+    <p style="margin-top:15px;">
+        Our vision is to explore practical agricultural
+        opportunities, encourage innovation and contribute
+        to a more sustainable agricultural future.
+    </p>
+</section>
+
+<section class="section" id="focus">
+    <h2>Our Focus Areas</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Crop Production</h3>
+            <p>
+                Exploring opportunities in crop farming
+                and responsible agricultural production.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Agribusiness</h3>
+            <p>
+                Understanding agricultural markets,
+                value chains and business opportunities.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Livestock Farming</h3>
+            <p>
+                Exploring responsible livestock production
+                and related business opportunities.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Agricultural Innovation</h3>
+            <p>
+                Exploring how technology and new ideas
+                can support modern agriculture.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section opportunities" id="opportunities">
+    <h2>Our Vision</h2>
+
+    <p>
+        We aim to explore opportunities that connect
+        agriculture, innovation and enterprise to create
+        long-term value for communities and businesses.
+    </p>
+
+    <a href="index.html" class="button">Back to SARAX</a>
+</section>
+
+<footer>
+    <p>A developing division of SARAX.</p>
+    <p>© 2026 SARAX. All Rights Reserved.</p>
+    <p>Building Ideas. Creating Opportunities.</p>
+</footer>
+
+</body>
+</html>
